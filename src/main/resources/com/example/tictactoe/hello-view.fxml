@@ -1,16 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.tictactoe.HelloController">
+<VBox alignment="CENTER" prefHeight="418.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe.HelloController">
   <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
+<VBox alignment="CENTER" prefHeight="50.0">
+    <Label  text="TIC TAC TOE">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
+    <GridPane fx:id="titlePane" alignment="CENTER" gridLinesVisible="true" prefHeight="100.0">
+        <Label text="Player 1" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <font>
+               <Font size="20.0" />
+            </font>
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding></Label>
+        <Label text="Player 2" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <font>
+               <Font size="20.0" />
+            </font>
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding></Label>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
+        <Label  fx:id="playerOne"  text="Score: 0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <font>
+               <Font size="20.0" />
+            </font>
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding></Label>
+        <Label fx:id="computerPlayer"  text="Score: 0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+               <Font size="20.0" />
+            </font>
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding></Label>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+         <VBox.margin>
+            <Insets bottom="20.0" top="20.0" />
+         </VBox.margin>
+
+    </GridPane>
+</VBox>
+  <GridPane fx:id="pane" alignment="CENTER" gridLinesVisible="true" prefHeight="300.0" prefWidth="300.0">
+    <children>
+      <Button fx:id="btn1" onMouseClicked="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+      <Button fx:id="btn2" onMouseClicked="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      <Button fx:id="btn3" onMouseClicked="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+      <Button fx:id="btn4" onMouseClicked="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+      <Button fx:id="btn5" onMouseClicked="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button fx:id="btn6" onMouseClicked="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Button fx:id="btn7" onMouseClicked="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+      <Button fx:id="btn8" onMouseClicked="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button fx:id="btn9" onMouseClicked="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+    </children>
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+
+
+</GridPane>
+<Button onMouseClicked="#reset" text="reset board">
+      <VBox.margin>
+         <Insets top="30.0" />
+      </VBox.margin></Button>
+
+
 </VBox>
